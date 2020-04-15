@@ -90,6 +90,8 @@ void onConnectionEstablished()
   {
     Serial.print("Received: ");
     Serial.println(payload);
+    if (payload == "Stoplight READY!")
+      counter = 0;   
     if (payload == "RED")
       counter = 1;
     if (payload == "YELLOW")
@@ -186,12 +188,12 @@ void publishStatus(){
 const TProgmemPalette16 myPurplePalette_p PROGMEM =
 {
     CRGB::Purple,
-    CRGB::Magenta, 
+    CRGB::Yellow, 
     CRGB::DarkMagenta,
     CRGB::Red,
     
     CRGB::BlueViolet,
-    CRGB::DarkOrchid,
+    CRGB::White,
     CRGB::Black,
     CRGB::Indigo,
     
@@ -202,7 +204,7 @@ const TProgmemPalette16 myPurplePalette_p PROGMEM =
     
     CRGB::Red,
     CRGB::BlueViolet,
-    CRGB::Indigo,
+    CRGB::Green,
     CRGB::Purple
 };
 
