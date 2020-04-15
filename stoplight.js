@@ -2,14 +2,13 @@
 
 
 var LEDstatus = 0;
-var status = "RED";
+var status = "Stoplight READY!";
 var circleRadius = 100;
 
 function setup() {
   createCanvas(400, 400); 
   noStroke();
-  background(255);
-  fill(0,0,0);
+  textSize(25);
 
   uniqueID = int(10000*Math.random(10000))
   alert = uniqueID
@@ -22,11 +21,11 @@ function setup() {
 function onConnect() {
   console.log("onConnect");
   client.subscribe("stopLight/status");
-
+  
   message = new Paho.MQTT.Message(str(status));
   message.destinationName = "stopLight/status";
   client.send(message);
- 
+  
 
 }
 
@@ -60,10 +59,10 @@ function onMessageArrived(message) {
 }
 
 function draw() {
-  background(0); //
+  background(255); //
   strokeWeight(4);
   circle(width/2,height/2,circleRadius)
-  text(LEDstatus,30,30);
+  text("LEDstatus " + LEDstatus,30,30);
 
 }
 
