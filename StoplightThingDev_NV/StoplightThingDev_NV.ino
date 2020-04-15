@@ -28,8 +28,8 @@ extern const TProgmemPalette16 myYellowPalette_p PROGMEM;
 extern CRGBPalette16 myGreenPalette;
 extern const TProgmemPalette16 myGreenPalette_p PROGMEM;
 
-extern CRGBPalette16 myPurplePalette;
-extern const TProgmemPalette16 myPurplePalette_p PROGMEM;
+extern CRGBPalette16 myRainbowPalette;
+extern const TProgmemPalette16 myRainbowPalette_p PROGMEM;
 
 #define REDLED 16
 #define YELLOWLED 12
@@ -75,7 +75,7 @@ void setup() {
   FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection( TypicalLEDStrip );
   FastLED.setBrightness(  BRIGHTNESS );
   
-  currentPalette = myPurplePalette_p;
+  currentPalette = myRainbowPalette_p;
   currentBlending = LINEARBLEND;
 
   showLEDs();
@@ -148,7 +148,7 @@ void showLEDs(){
     yellowState = HIGH;
     greenState = HIGH;
     LEDstatus="Stoplight READY!";
-    currentPalette = myPurplePalette_p;
+    currentPalette = myRainbowPalette_p;
     }
     else if (counter == 1)
     {
@@ -185,9 +185,9 @@ void publishStatus(){
 
 }
 
-const TProgmemPalette16 myPurplePalette_p PROGMEM =
+const TProgmemPalette16 myRainbowPalette_p PROGMEM =
 {
-    CRGB::Purple,
+    CRGB::Indigo,
     CRGB::Yellow, 
     CRGB::DarkMagenta,
     CRGB::Red,
@@ -234,19 +234,19 @@ const TProgmemPalette16 myRedPalette_p PROGMEM =
 const TProgmemPalette16 myYellowPalette_p PROGMEM =
 {
     CRGB::Wheat,
-    CRGB::Wheat, // 'white' is too bright compared to red and blue
-    CRGB::Yellow,
+    CRGB::Gold, 
+    CRGB::DarkGoldenrod,
     CRGB::Yellow,
     
     CRGB::Yellow,
     CRGB::Orange,
-    CRGB::Orange,
-    CRGB::LightYellow,
+    CRGB::DarkGoldenrod,
+    CRGB::Gold,
     
     CRGB::LightYellow,
-    CRGB::Coral,
+    CRGB::DarkGoldenrod,
     CRGB::Orange,
-    CRGB::Orange,
+    CRGB::Gold,
     
     CRGB::Wheat,
     CRGB::Coral,
@@ -272,7 +272,7 @@ const TProgmemPalette16 myGreenPalette_p PROGMEM =
     CRGB::Green,
     
     CRGB::DarkSeaGreen,
-    CRGB::Green,
+    CRGB::GreenYellow,
     CRGB::Green,
     CRGB::Chartreuse
 };
