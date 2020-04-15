@@ -188,19 +188,19 @@ const TProgmemPalette16 myPurplePalette_p PROGMEM =
     CRGB::Purple,
     CRGB::Magenta, 
     CRGB::DarkMagenta,
-    CRGB::DarkOrchid,
+    CRGB::Red,
     
     CRGB::BlueViolet,
     CRGB::DarkOrchid,
-    CRGB::BlueViolet,
+    CRGB::Black,
     CRGB::Indigo,
     
     CRGB::Purple,
     CRGB::DodgerBlue,
-    CRGB::Purple,
+    CRGB::Black,
     CRGB::DarkOrchid,
     
-    CRGB::Indigo,
+    CRGB::Red,
     CRGB::BlueViolet,
     CRGB::Indigo,
     CRGB::Purple
