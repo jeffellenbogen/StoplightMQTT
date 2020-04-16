@@ -264,15 +264,15 @@ const TProgmemPalette16 myGreenPalette_p PROGMEM =
     CRGB::Green,
     CRGB::LimeGreen,
     CRGB::Lime,
-    CRGB::Chartreuse,
+    CRGB::Green,
     
     CRGB::MediumSeaGreen,
     CRGB::ForestGreen,
-    CRGB::Chartreuse,
     CRGB::Green,
+    CRGB::ForestGreen,
     
     CRGB::DarkSeaGreen,
-    CRGB::GreenYellow,
+    CRGB::DarkSeaGreen,
     CRGB::Green,
-    CRGB::Chartreuse
+    CRGB::Lime
 };
