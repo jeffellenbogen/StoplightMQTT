@@ -92,11 +92,11 @@ void onConnectionEstablished()
     Serial.println(payload);
     if (payload == "Stoplight READY!")
       counter = 0;   
-    if (payload == "RED")
+    if (payload == "GREEN")
       counter = 1;
     if (payload == "YELLOW")
       counter = 2; 
-    if (payload == "GREEN")
+    if (payload == "RED")
       counter = 3; 
     showLEDs(); 
   }
@@ -152,11 +152,11 @@ void showLEDs(){
     }
     else if (counter == 1)
     {
-      redState = HIGH;
+      redState = LOW;
       yellowState = LOW;
-      greenState = LOW;
-      LEDstatus="RED";
-      currentPalette = myRedPalette_p;
+      greenState = HIGH;
+      LEDstatus = "GREEN";  
+      currentPalette = myGreenPalette_p;
     }
    else if (counter == 2)
     {
@@ -168,11 +168,12 @@ void showLEDs(){
     }
    else if (counter == 3)
     {
-      redState = LOW;
+      redState = HIGH;
       yellowState = LOW;
-      greenState = HIGH;
-      LEDstatus = "GREEN";  
-      currentPalette = myGreenPalette_p;
+      greenState = LOW;
+      LEDstatus="RED";
+      currentPalette = myRedPalette_p;
+
     }  
     digitalWrite(REDLED, redState);
     digitalWrite(YELLOWLED, yellowState);

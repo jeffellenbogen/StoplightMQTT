@@ -40,20 +40,20 @@ function onMessageArrived(message) {
       LEDstatus = 0;
       fill(255,0,200);
     }
-    else if (status == "RED")
+    else if (status == "GREEN")
     {
       LEDstatus = 1;
-      fill(255,0,0);
+      fill(0,255,0);
     }
     else if (status == "YELLOW")
     {
       LEDstatus = 2;
       fill(200,170,0);
     }
-    else if (status == "GREEN")
+    else if (status == "RED")
     {
       LEDstatus = 3;
-      fill(0,255,0);
+      fill(255,0,0);
     }
   }
 }
@@ -77,11 +77,11 @@ function mouseReleased() {
     if (LEDstatus > 3)
       LEDstatus = 1;
     if (LEDstatus == 1)
-      status = "RED";
+      status = "GREEN";
     else if (LEDstatus == 2)      
       status = "YELLOW";
     else if (LEDstatus == 3)
-      status = "GREEN";
+      status = "RED";
     message = new Paho.MQTT.Message(str(status));
     message.destinationName = "stopLight/status";
     client.send(message);
