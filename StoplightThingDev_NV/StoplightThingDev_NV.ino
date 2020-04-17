@@ -39,7 +39,7 @@ extern const TProgmemPalette16 myRainbowPalette_p PROGMEM;
 int redState, yellowState, greenState;
 
 int counter = 0;
-String LEDstatus = "Stoplight Ready!";
+String LEDstatus = "READY";
 
 typedef struct
 {
@@ -90,7 +90,7 @@ void onConnectionEstablished()
   {
     Serial.print("Received: ");
     Serial.println(payload);
-    if (payload == "Stoplight READY!")
+    if (payload == "READY")
       counter = 0;   
     if (payload == "GREEN")
       counter = 1;
@@ -147,7 +147,7 @@ void showLEDs(){
     redState = HIGH;
     yellowState = HIGH;
     greenState = HIGH;
-    LEDstatus="Stoplight READY!";
+    LEDstatus="READY";
     currentPalette = myRainbowPalette_p;
     }
     else if (counter == 1)

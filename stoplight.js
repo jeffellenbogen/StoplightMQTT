@@ -2,13 +2,13 @@
 
 
 var LEDstatus = 0;
-var status = "Stoplight READY!";
-var circleRadius = 100;
+var status = "READY";
+var circleRadius = 200;
 
 function setup() {
-  createCanvas(400, 400); 
+  createCanvas(600, 600); 
   noStroke();
-  textSize(25);
+  textSize(30);
 
   uniqueID = int(10000*Math.random(10000))
   alert = uniqueID
@@ -35,7 +35,7 @@ function onMessageArrived(message) {
   if (message.destinationName == "stopLight/status")
   {
     status = message.payloadString;
-    if (status == "Stoplight READY!")
+    if (status == "READY")
     {
       LEDstatus = 0;
       fill(255,0,200);
@@ -48,7 +48,7 @@ function onMessageArrived(message) {
     else if (status == "YELLOW")
     {
       LEDstatus = 2;
-      fill(200,170,0);
+      fill(232, 225, 30);
     }
     else if (status == "RED")
     {
@@ -62,7 +62,7 @@ function draw() {
   background(255); //
   strokeWeight(4);
   circle(width/2,height/2,circleRadius)
-  text("LEDstatus " + LEDstatus,30,30);
+  text("Status: " + status,185,50);
 
 }
 
