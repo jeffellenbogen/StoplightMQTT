@@ -12,7 +12,7 @@ function setup() {
 
   uniqueID = int(10000*Math.random(10000))
   alert = uniqueID
-  client = new Paho.MQTT.Client("192.168.1.6", 9001, "stoplight.js" + str(uniqueID)); //port 9001 is for websockets
+  client = new Paho.MQTT.Client("192.168.1.22", 9001, "stoplight.js" + str(uniqueID)); //port 9001 is for websockets
   client.onMessageArrived = onMessageArrived;
   client.connect({onSuccess:onConnect});
 }
